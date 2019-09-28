@@ -1,0 +1,8 @@
+use_frameworks!
+target 'PespiOS' do
+    pod 'Alamofire', '~> 4.5'
+    pod 'AlamofireImage', '~> 3.5'
+    pod 'GoogleMaps'
+    pod 'GooglePlaces'
+    pod 'SVGKit'
+end
