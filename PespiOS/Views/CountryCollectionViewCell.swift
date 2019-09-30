@@ -25,27 +25,17 @@ class CountryCollectionViewCell: UICollectionViewCell {
     }
     
     func countryInfo(info:Country){
-        let imageSVG = SVGKImage(contentsOf: info.flagURL)
         country = info
         name.text = info.name
         nativeName.text = info.nativeName
-        flag.image = imageSVG?.uiImage
+        DispatchQueue.main.async {
+            let imageFlagSVG = SVGKImage(contentsOf: info.flagURL)
+            self.flag.image = imageFlagSVG?.uiImage
+                       }
         flag.clipsToBounds = true
-
         shadow.setShadow()
     }
     
-    func countryInfoName(info:String){
-          // country = info
-           name.text = info//.name
-           //nativeName.text = info.nativeName
-           /*DispatchQueue.main.async {
-               self.imageWeb.load(URLRequest(url: self.country.flagURL!))
-           }
-           imageWeb.scrollView.isScrollEnabled = false*/
-           shadow.setShadow()
-       }
-
 }
 
 

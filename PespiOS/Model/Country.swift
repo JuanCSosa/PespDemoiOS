@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 
+
  protocol CountryImageProtocol {
      func finishDownloadCountryImage()
 }
@@ -38,7 +39,6 @@ class Country: NSObject {
     var traducciones: [String:String] = [:]
     var regionalBlocs: [String] = []
     var flagURL : URL?
-    var flagString = ""
     
     override init() { }
     
@@ -134,10 +134,9 @@ class Country: NSObject {
                 traducciones = translation
         }
         
-        if let flag = details["flag"] as? String {
-            flagString = flag
-            if let the_url = URL(string: flagString) {
-                self.flagURL = the_url
+        if let flag = details["flag"] as? String {            
+            if let the_url = URL(string: flag) {
+                     self.flagURL = the_url
             }
         }
         
